@@ -29,22 +29,30 @@ https://cloud.ibm.com/
 ### Acceda a su instancia de Monitoring with Sysdig 📦
 
 
-_1.	Dentro de la interfaz de Monitoring with Sysdig vaya configuración y haga clic sobre **Notification channels*._
+_1.	Dentro de la interfaz de Monitoring with Sysdig vaya configuración y haga clic sobre **Notification channels** y en **Add Notification Channel** seleccione **webhooks**._
 
 
 
 <p align="center">
 <img width="696" alt="7" src="https://github.com/emeloibmco/IBM-Cloud-Monitoring-WebHook---Service-Now/blob/master/imagenesw/1.png">
 </p>
+_2. Ingrese las opciones de configuración del canal de webhook:_
 
-_•	Diríjase a la sección de **clústers** y dar clic en el que se desea acceder._
+**URL**: la URL de destino a la que se enviarán las notificaciones. Nombre del canal: agregue un nombre significativo, como "Ansible", "Webhook.Site", etc.
 
-_•	Se da clic en el botón **Actions...** y luego en la sección que dice **Terminal Web**._
+**Habilitado**: activar / desactivar las opciones de notificación: activar lasnotificaciones cuando se resuelven o reconocen las alertas.
 
-![WhatsApp Image 2020-06-09 at 11 30 23 AM](https://user-images.githubusercontent.com/60628267/84174858-bc304700-aa44-11ea-99d7-02065ad676cc.jpeg)
+**Notificación de prueba**: alterne para recibir una notificación de que la URL configurada está funcionando.
 
- 
-_La terminal que se abre al terminar el paso anterior, es una terminal similar a la que maneja un sistema operativo como Ubuntu._
+_3. De compartido con: elija si desea aplicar este canal globalmente ( Todos los equipos ) o a un equipo específico en el menú desplegable._
+
+_4.Haga clic en Save._
+
+Cuando se crea el canal, puede usarlo en cualquier alerta que cree.
+
+Luego, cuando se active la alerta, la notificación se enviará como POST en formato JSON a su punto final de webhook. (Consulte Salida de alerta, a continuación).
+
+Con fines de prueba, puede utilizar un sitio de terceros para crear un punto final temporal y ver exactamente qué enviará una alerta de Sysdig en cualquier notificación específica.
 
 ### Instalación de Knative en el cluster de Kubernetes (IKS) 📦
 
